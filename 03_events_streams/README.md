@@ -35,3 +35,17 @@ results.on(‘error’, function(err) {
 The publisher | The subscriber
 ---|---
 emitter.emit(event, [args]); |emitter.on(event, listener);
+
+## Stream in Node.js
+
+ReadableStream |WritableStream
+---|---
+readable [boolean] |writable [boolean]
+event:‘data’ |event:‘drain’
+event:‘end’ |event:‘error’
+event:‘error’ |event:‘close’
+event:‘close’  |event:‘pipe’
+pause()|write()
+resume()|end()
+destroy()|destroy()
+pipe()|destroySoon()
